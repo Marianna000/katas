@@ -13,13 +13,22 @@ def longest_collatz(num):
     if num % 2 == 0:
         storage = even(num)
         while storage != 1:
-            storage = even(storage)
-            count += 1
+            if storage % 2 == 0:
+                storage = even(storage)
+                count += 1
+            elif storage % 2 != 0:
+                storage = odd(storage)
+                count += 1
+
     elif num % 2 != 0:
         storage = odd(num)
         while storage != 1:
-            storage = even(storage)
-            count += 1
+            if storage % 2 == 0:
+                storage = even(storage)
+                count += 1
+            elif storage % 2 != 0:
+                storage = odd(storage)
+                count += 1
     return count
 
 def result_list(input_array):
