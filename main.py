@@ -25,17 +25,9 @@ def longest_collatz(num):
 def result_list(input_array):
         memory = input_array.copy()
         list = []
-        #storage = input_array
-        #while len(input_array) > 0:
+
         for val in input_array:
             list.append(longest_collatz(val))
-            input_array.pop(0)
-                #storage = input_array
-                # while len(storage) > 0:
-                #     for v in storage:
-                #         list.append(longest_collatz(v))
-                #         storage.pop(0)
-                #return list
 
         index = range(len(list))
         max_num = list[0]
@@ -48,5 +40,5 @@ def result_list(input_array):
                 max_num = max_num
         return memory[max_num_index]
 
-print(result_list([27, 4, 5, 27, 4, 5]))
+print(result_list([75, 226, 113, 340]))
 
